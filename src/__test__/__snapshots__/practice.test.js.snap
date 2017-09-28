@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <input
+    id="FirstNumber"
+    max-width="50px"
+    type="number"
+  />
+  <br />
+  <input
+    id="SecondNumber"
+    max-width="50px"
+    type="number"
+  />
+  <br />
+  <button
+    id="check"
+    onClick={[Function]}
+  >
+    click me
+  </button>
+</div>
+`;
