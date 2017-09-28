@@ -24,6 +24,6 @@ it('renders correctly', () => {
 
  it('should be selectable by id "check"', function() {
     const component = shallow(<App />);
-    const button=component.find('button');
-    expect((button).is('#check')).toBe(true);
+    const para=component.find('p');
+    expect((para).is('#check')).toBe(true);
   });

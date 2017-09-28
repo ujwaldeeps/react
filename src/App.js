@@ -1,19 +1,34 @@
-import React,{Component} from 'react';
-
-
+import React,{ Component } from 'react';
 class App extends Component {
 
-
-    summ(a,b){
-        window.alert(a+b);
+      constructor(props){
+        super(props);
+        this.state = {firstNumber:undefined,secondNumber:undefined,result:undefined};
+        this.onChange = this.onChange.bind(this);
+        this.summ = this.summ.bind(this);
     }
+
+    summ(){
+
+            this.setState({
+               result: (parseInt(this.state.firstNumber,10) + parseInt(this.state.secondNumber,10)).toString()
+            });
+           // window.alert(result);
+
+    }
+
+    onChange(event){
+        this.setState({ [event.target.name]: event.target.value });
+      }
+
 
   render() {
     return (
         <div>
-            <input type="number" max-width="50px" id="FirstNumber"></input><br />
-            <input type="number" max-width="50px" id="SecondNumber"></input><br />
-            <button onClick={()=>{this.summ(5,6)}} id="check">click me</button>
+            <input type="number" name="firstNumber" max-width="50px" onChange={this.onChange} /><br />
+            <input type="number" name="secondNumber" max-width="50px" onChange={this.onChange} /><br />
+            <button onClick={this.summ}>click me</button>
+            <p  id="check">{this.state.result}</p>
         </div>);
   }
 }
